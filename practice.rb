@@ -27,3 +27,38 @@ blockchain = [
 # Anthony's KelloggCoin balance is 2650
 
 # 👇👇👇 Your code HERE 👇👇👇
+
+balance_ben = 0
+balance_brian = 0
+balance_evan = 0
+balance_anthony = 0
+
+for transaction in blockchain
+  if transaction[:from_user] == "ben"
+    balance_ben = balance_ben - transaction[:amount]
+  elsif transaction[:from_user] == "brian"
+    balance_brian = balance_brian - transaction[:amount]
+  elsif transaction[:from_user] == "evan"
+    balance_evan = balance_evan - transaction[:amount]
+  elsif transaction[:from_user] == "anthony"
+    balance_anthony = balance_anthony - transaction[:amount]
+  end
+end
+
+for transaction in blockchain
+  if transaction[:to_user] == "ben"
+    balance_ben = balance_ben + transaction[:amount]
+  elsif transaction[:to_user] == "brian"
+    balance_brian = balance_brian + transaction[:amount]
+  elsif transaction[:to_user] == "evan"
+    balance_evan = balance_evan + transaction[:amount]
+  elsif transaction[:to_user] == "anthony"
+    balance_anthony = balance_anthony + transaction[:amount]
+  end
+end
+
+puts "Ben's KelloggCoin balance is #{balance_ben}"
+puts "Brian's KelloggCoin balance is #{balance_brian}"
+puts "Evan's KelloggCoin balance is #{balance_evan}"
+puts "Anthony's KelloggCoin balance is #{balance_anthony}"
+
